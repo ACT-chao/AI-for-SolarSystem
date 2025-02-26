@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta tags -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Primary Meta Tags -->
+        <title>Solar System - View our Solar system in 3D interactive view!</title>
+        <meta name="title" content="Solar System - View our Solar system in 3D interactive view!">
+        <meta name="description" content="A replica of out Solar system with interactive planets. Learn something about planets and their moons. ">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://honzaap.github.io/SolarSystem">
+        <meta property="og:title" content="Solar System - View our Solar system in 3D interactive view!">
+        <meta property="og:description" content="A replica of out Solar system with interactive planets. Learn something about planets and their moons. ">
+        <meta property="og:image" content="https://honzaap.github.io/SolarSystem/assets/ogmeta.png">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://honzaap.github.io/SolarSystem">
+        <meta property="twitter:title" content="Solar System - View our Solar system in 3D interactive view!">
+        <meta property="twitter:description" content="A replica of out Solar system with interactive planets. Learn something about planets and their moons. ">
+        <meta property="twitter:image" content="https://honzaap.github.io/SolarSystem/assets/ogmeta.png">
+
+        <base href="./">
+        <link rel="icon" href="./favicon.ico" />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500&family=Chivo:wght@400;700&display=swap" rel="stylesheet">
+        
+        <style>
+            .main-title {
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-family: 'Bai Jamjuree', sans-serif;
+                font-size: 28px;
+                font-weight: bold;
+                color: #00ffd9;
+                text-shadow: 0 0 10px rgba(0, 255, 217, 0.3);
+                background: linear-gradient(90deg, #00ffd9, #00a6ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                z-index: 1000;
+                letter-spacing: 2px;
+            }
+            
+            .main-title span {
+                opacity: 0.8;
+                font-size: 24px;
+                color: #ffffff;
+                -webkit-text-fill-color: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="main-title">星图数智 <span>——我们的太阳系</span></h1>
+        <div id="app"></div>
+        <script type="module" src="./src/main.js"></script>
+    </body>
+</html>
