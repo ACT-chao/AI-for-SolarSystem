@@ -1,0 +1,279 @@
+.chat-sidebar {
+    position: fixed;
+    right: -320px;  /* 初始状态在屏幕右侧外 */
+    top: 350px;    /* 调整顶部位置，确保在 speed 控制按钮下方 */
+    width: 300px;
+    height: 500px;
+    background: rgba(26, 29, 121, 0.9);
+    color: #F3F3F3;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease;  /* 改用 right 属性进行过渡 */
+}
+
+.chat-sidebar.active {
+    right: 15px;  /* 显示状态时的位置 */
+}
+
+.chat-header {
+    font-family: 'Bai Jamjuree', sans-serif;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.settings-button,
+.clear-button {
+    background: none;
+    border: none;
+    color: #F3F3F3;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.settings-button:hover,
+.clear-button:hover {
+    color: #ffffff;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message {
+    margin-bottom: 8px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    max-width: 85%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    font-size: 14px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.user-message {
+    background: rgba(79, 86, 255, 0.3);
+    margin-left: auto;
+    color: #ffffff;
+    border-radius: 16px 16px 4px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ai-message {
+    background: rgba(255, 255, 255, 0.08);
+    margin-right: auto;
+    color: #ffffff;
+    border-radius: 16px 16px 16px 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chat-input-container {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #F3F3F3;
+    font-family: 'Chivo', sans-serif;
+}
+
+.chat-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.send-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #F3F3F3;
+    color: #1A1D79;
+    cursor: pointer;
+    font-family: 'Chivo', sans-serif;
+    font-weight: bold;
+}
+
+.send-button:hover {
+    background: #e0e0e0;
+}
+
+.settings-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1A1D79;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1001;
+}
+
+.settings-modal.active {
+    display: block;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    display: block;
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    color: #F3F3F3;
+    font-family: 'Chivo', sans-serif;
+}
+
+.form-group input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #F3F3F3;
+}
+
+.form-group input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.settings-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.settings-buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Chivo', sans-serif;
+}
+
+.save-button {
+    background: #F3F3F3;
+    color: #1A1D79;
+}
+
+.cancel-button {
+    background: transparent;
+    color: #F3F3F3;
+    border: 1px solid #F3F3F3;
+}
+
+.chat-toggle {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background: rgba(26, 29, 121, 0.9);
+    color: #F3F3F3;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 自定义滚动条样式 */
+.chat-messages::-webkit-scrollbar {
+    width: 4px;  /* 更窄的滚动条 */
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: transparent;  /* 透明轨道 */
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);  /* 半透明的滑块 */
+    border-radius: 2px;  /* 圆角滑块 */
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);  /* 悬停时稍微更亮 */
+}
+
+/* 重置所有默认边距和内边距 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
