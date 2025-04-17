@@ -1,4 +1,6 @@
-# 太阳系行星运动模拟系统
+# 太阳系行星运动模拟系统 | Solar System Simulation
+
+[中文](#太阳系行星运动模拟系统-1) | [English](#solar-system-simulation)
 
 这是一个基于Three.js、Vue.js和ECharts开发的太阳系行星运动模拟系统，提供了交互式的3D太阳系模型展示和数据分析功能。
 
@@ -180,4 +182,189 @@ solarsystem/
 - 可询问天文知识和数据分析
 - 支持上下文对话
 - 历史记录自动保存
+
+---
+
+# Solar System Simulation
+
+This is a Solar System simulation system based on Three.js, Vue.js, and ECharts, providing an interactive 3D Solar System model display and data analysis capabilities.
+
+## Features
+
+1. **Planetary Motion Simulation**
+   - Accurate planetary orbit simulation
+   - Adjustable time flow rate
+   - Real celestial body proportions and orbital relationships
+   - Support for switching between idealized and real orbits
+
+2. **Interactive Features**
+   - Free viewpoint control (zoom, rotate, pan)
+   - Planet information card display
+   - Planetary orbit highlighting
+   - Time and date display
+   - Planet click interaction
+   - Orbit tracking and focusing
+   - Smooth camera animation transitions
+   - Planet materials and lighting effects
+   - Real-time shadow rendering
+
+3. **Data Analysis**
+   - Real-time planet position tracking
+   - Chinese traditional astronomical orientation display
+   - Special astronomical phenomena alerts (conjunction, opposition, etc.)
+   - Planetary motion statistical charts:
+     * Real-time position radar chart
+     * Planet size comparison chart
+     * Temperature distribution curve
+     * Orbital period analysis
+     * Velocity change trend chart
+   - Chinese traditional astronomical calendar integration
+   - Real-time planet data updates
+   - Interactive chart operations
+   - Data filtering and screening functions
+
+4. **AI Intelligent Assistant**
+   - Built-in AI chat assistant with natural language interaction
+   - Configurable OpenAI API with custom model support
+   - Intelligent answers to astronomy-related questions
+   - History conversation record saving
+   - Support for setting API keys and server addresses
+
+## Interface Display
+
+### Main Interface
+![Main Interface](./public/picture/Main%20interface.png)
+*3D Solar System simulation main interface, displaying planetary orbits and real-time motion*
+
+### Data Analysis Interface
+![Data Analysis Interface](./public/picture/Data%20analysis%20interface.png)
+*Planetary data analysis panel, providing various charts and data visualizations*
+
+### Planet Information Card and AI Assistant
+![Planet Information Card and AI Assistant](./public/picture/card%20with%20AI.png)
+*Detailed planet information card display and intelligent AI assistant interaction*
+
+## Technology Stack
+
+- **Frontend Framework**: Vue.js 3.x
+- **3D Rendering**: 
+  * Three.js core engine
+  * WebGL shaders
+  * Custom material system
+  * Post-processing effects
+- **Data Visualization**: 
+  * ECharts 5.x
+  * Custom chart components
+  * WebGL data rendering
+  * Real-time data stream processing
+- **Interactive Control**:
+  * OrbitControls camera control
+  * Raycaster detection
+  * GSAP animation library
+  * Custom event system
+- **Build Tool**: Vite
+- **Style Processing**: SCSS
+- **3D Model Loading**: GLTFLoader
+- **Post-processing Effects**: Postprocessing
+- **AI Integration**: OpenAI API
+- **HTTP Client**: isomorphic-fetch
+
+## Project Structure
+
+```
+solarsystem/
+├── src/                    # Source code directory
+│   ├── components/        # Vue components
+│   │   ├── Scene.vue     # 3D scene main component
+│   │   ├── DashBoard.vue # Data analysis panel
+│   │   ├── Options.vue   # Control options component
+│   │   └── PlanetCard.vue# Planet information card
+│   ├── sass/             # SCSS style files
+│   ├── utils/            # Utility functions
+│   ├── constants.js      # Constant definitions
+│   ├── router.js         # Router configuration
+│   ├── chat.js          # AI chat assistant implementation
+│   ├── chat.css         # AI chat interface styles
+│   └── main.js          # Application entry
+├── public/               # Static resources
+│   └── models/          # 3D model files
+├── package.json         # Project dependency configuration
+└── vite.config.js       # Vite configuration file
+```
+
+## Deployment Steps
+
+1. **Environment Preparation**
+   ```bash
+   # Ensure Node.js is installed (recommended version >= 14.x)
+   node -v
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run Development Environment**
+   ```bash
+   npm run dev
+   ```
+   The development server will start at http://localhost:3000
+
+4. **Production Environment Build**
+   ```bash
+   npm run build
+   ```
+   Build artifacts will be generated in the `dist` directory
+
+5. **Preview Production Build**
+   ```bash
+   npm run preview
+   ```
+
+## Browser Support
+
+- Recommended to use modern browsers (Chrome, Firefox, Safari, Edge, etc.)
+- WebGL support required
+- Newer browser versions are recommended for the best performance and experience
+
+## Notes
+
+- Initial loading may take some time due to 3D model and texture resource loading
+- Performance depends on the device's hardware configuration, especially GPU performance
+- Recommended to run on devices with good performance for the best experience
+
+## User Guide
+
+### 3D Scene Interaction
+- **View Control**
+  * Left-click drag: Rotate view
+  * Right-click drag: Pan view
+  * Scroll wheel: Zoom view
+  * Double-click planet: Focus on specific planet
+
+- **Planet Interaction**
+  * Mouse hover: Display basic planet information
+  * Click planet: Display detailed information card
+  * Click orbit: Highlight orbit path
+  * ESC key: Return to overall Solar System view
+
+### Data Analysis Panel
+- **Real-time Astronomical Phenomena**
+  * View current planet positions and orientations
+  * Monitor special astronomical phenomena (conjunction, opposition, etc.)
+  * Observe planetary motion trends
+
+- **Chart Interaction**
+  * Support chart zooming and panning
+  * Data point hover displays details
+  * Select time ranges
+  * Support data filtering and comparison
+
+### AI Assistant Usage
+- Click the dialogue icon in the bottom right corner to open the AI assistant
+- Support natural language questions
+- Can inquire about astronomical knowledge and data analysis
+- Support contextual conversations
+- History records automatically saved
 
